@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: I want to install tree
+    apt:
+      name: tree
+      state: present
+  - name: I want to uninstall apache2
+    apt:
+      name: apache2
+      state: absent
+  - name: I want to update
+    cmd: touch ahmed.txt
